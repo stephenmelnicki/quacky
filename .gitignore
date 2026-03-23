@@ -1,0 +1,11 @@
+.env
+.cache
+.DS_Store
+.eslintcache
+.temp
+.idea
+coverage
+dist
+cache
+node_modules
+

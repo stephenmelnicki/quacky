@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Usage {
+  guildId   BigInt
+  channelId BigInt
+  userId    BigInt
+  user      User   @relation(fields: [userId], references: [id])
+  counter   BigInt @default(0)
+
+  @@unique([guildId, channelId, userId])
+}
+
+model User {
+  id            BigInt @unique
+  username      String
+  discriminator String
+  lastUpdate    BigInt
+
+  usages Usage[]
+}

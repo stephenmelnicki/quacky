@@ -1,0 +1,31 @@
+{
+  "name": "@quacky/monorepo",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.32.1",
+  "description": "A Discord bot for Marble Wednesdays",
+  "author": "Stephen Melnicki",
+  "license": "MIT",
+  "repository": "github:stephenmelnicki/quacky",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "docs": "pnpm run --filter docs dev",
+    "bot": "pnpm run --filter bot build && pnpm run --filter bot start"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:eslint",
+    "eslint": "catalog:eslint",
+    "eslint-plugin-format": "catalog:eslint",
+    "lint-staged": "catalog:utils",
+    "pnpm": "catalog:utils",
+    "simple-git-hooks": "catalog:utils",
+    "typescript": "catalog:typescript"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue,md}": "eslint --cache --fix"
+  }
+}

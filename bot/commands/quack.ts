@@ -3,10 +3,10 @@ import { SlashCommandBuilder } from 'discord.js'
 import { addToUsageQueue } from '../utils/queue'
 
 export const data = new SlashCommandBuilder()
-  .setName('ping')
-  .setDescription('Replies with Pong!')
+  .setName('quack')
+  .setDescription('Replies with Quack!')
 
 export async function handle(interaction: ChatInputCommandInteraction): Promise<void> {
   addToUsageQueue({ guildId: interaction.guildId!, channelId: interaction.channelId, userId: interaction.user.id, username: interaction.user.username, discriminator: interaction.user.discriminator })
-  await interaction.reply('Pong!')
+  await interaction.reply('Quack!')
 }

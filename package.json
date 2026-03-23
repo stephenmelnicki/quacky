@@ -7,11 +7,14 @@
   "author": "Stephen Melnicki",
   "license": "MIT",
   "repository": "github:stephenmelnicki/quacky",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
     "docs": "pnpm run --filter docs dev",
-    "bot": "pnpm run --filter bot build && pnpm run --filter bot start"
+    "bot": "pnpm run --filter bot start"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:eslint",

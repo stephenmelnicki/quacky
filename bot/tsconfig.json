@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "lib": ["esnext"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "types": ["node"],
     "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "noUncheckedIndexedAccess": true,
-    "declaration": true,
-    "declarationMap": true,
+    "noImplicitAny": true,
+    "outDir": "./dist",
     "sourceMap": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "noUncheckedSideEffectImports": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src"]
 }

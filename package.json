@@ -14,21 +14,29 @@
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
     "docs": "pnpm run --filter docs dev",
-    "bot": "pnpm run --filter bot start"
+    "bot": "pnpm run --filter bot build && pnpm run --filter bot start"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:eslint",
+    "@eslint/js": "catalog:eslint",
     "eslint": "catalog:eslint",
     "eslint-plugin-format": "catalog:eslint",
+    "eslint-plugin-prettier": "catalog:eslint",
     "lint-staged": "catalog:utils",
+    "prettier": "catalog:eslint",
     "pnpm": "catalog:utils",
     "simple-git-hooks": "catalog:utils",
-    "typescript": "catalog:typescript"
+    "typescript": "catalog:typescript",
+    "typescript-eslint": "catalog:eslint"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,vue,md}": "eslint --cache --fix"
+    "*.{js,ts,md}": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "catalog:eslint",
+    "eslint-plugin-prettier": "catalog:eslint",
+    "prettier": "catalog:eslint"
   }
 }

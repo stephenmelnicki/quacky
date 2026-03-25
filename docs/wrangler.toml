@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "quacky-docs"
+name = "quacky"
 
 [assets]
 directory = ".vitepress/dist"

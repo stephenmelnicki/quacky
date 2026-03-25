@@ -14,6 +14,8 @@
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
     "docs": "pnpm run --filter docs dev",
+    "docs:build": "pnpm run --filter docs build",
+    "docs:preview": "pnpm run --filter docs preview",
     "bot": "pnpm run --filter bot build && pnpm run --filter bot start"
   },
   "devDependencies": {
@@ -22,8 +24,8 @@
     "eslint-plugin-format": "catalog:eslint",
     "eslint-plugin-prettier": "catalog:eslint",
     "lint-staged": "catalog:utils",
-    "prettier": "catalog:eslint",
     "pnpm": "catalog:utils",
+    "prettier": "catalog:eslint",
     "simple-git-hooks": "catalog:utils",
     "typescript": "catalog:typescript",
     "typescript-eslint": "catalog:eslint"
@@ -37,6 +39,7 @@
   "dependencies": {
     "eslint-config-prettier": "catalog:eslint",
     "eslint-plugin-prettier": "catalog:eslint",
-    "prettier": "catalog:eslint"
+    "prettier": "catalog:eslint",
+    "wrangler": "catalog:utils"
   }
 }
